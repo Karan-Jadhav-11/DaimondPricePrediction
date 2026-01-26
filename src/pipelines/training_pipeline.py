@@ -1,10 +1,15 @@
+<<<<<<< HEAD
 import os
+=======
+import os 
+>>>>>>> 36f7984 (Initial commit: Redesigned UI, fixed scikit-learn mismatch, added README)
 import sys
 from src.logger import logging
 from src.exception import CustomException
 import pandas as pd
 
 from src.components.data_ingestion import DataIngestion
+<<<<<<< HEAD
 
 from src.components.data_transformation import DataTransformation
 from src.components.model_trainer import ModelTrainer
@@ -15,10 +20,24 @@ if __name__=='__main__':
     train_data_path,test_data_path=obj.initiate_data_ingestion()
     print(train_data_path,test_data_path)
 
+=======
+from src.components.data_transformation import DataTransformation
+from src.components.model_trainer import ModelTrainer
+
+if __name__=='__main__':
+    obj=DataIngestion()
+    train_data_path,test_data_path = obj.initiate_data_ingestion()
+    print(train_data_path,test_data_path)
+
+
+>>>>>>> 36f7984 (Initial commit: Redesigned UI, fixed scikit-learn mismatch, added README)
     data_transformation=DataTransformation()
 
     train_arr,test_arr,_=data_transformation.initiate_data_transformation(train_data_path,test_data_path)
 
     model_trainer=ModelTrainer()
     model_trainer.initate_model_training(train_arr,test_arr)
+<<<<<<< HEAD
 
+=======
+>>>>>>> 36f7984 (Initial commit: Redesigned UI, fixed scikit-learn mismatch, added README)

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Basic Import
+=======
+
+>>>>>>> 36f7984 (Initial commit: Redesigned UI, fixed scikit-learn mismatch, added README)
 import numpy as np
 import pandas as pd
 from sklearn.linear_model import LinearRegression, Ridge,Lasso,ElasticNet

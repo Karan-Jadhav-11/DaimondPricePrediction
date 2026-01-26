@@ -1,10 +1,26 @@
+<<<<<<< HEAD
 from sklearn.impute import SimpleImputer ## HAndling Missing Values
 from sklearn.preprocessing import StandardScaler # HAndling Feature Scaling
 from sklearn.preprocessing import OrdinalEncoder # Ordinal Encoding
+=======
+import os ,sys
+from dataclasses import dataclass
+from src.logger import logging
+from src.exception import CustomException
+
+import pandas as pd
+import numpy as np
+
+from sklearn.impute import SimpleImputer ## HAndling Missing Values
+from sklearn.preprocessing import StandardScaler # HAndling Feature Scaling
+from sklearn.preprocessing import OrdinalEncoder # Ordinal Encoding
+
+>>>>>>> 36f7984 (Initial commit: Redesigned UI, fixed scikit-learn mismatch, added README)
 ## pipelines
 from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
 
+<<<<<<< HEAD
 import sys,os
 from dataclasses import dataclass
 import pandas as pd
@@ -16,6 +32,10 @@ from src.logger import logging
 from src.utils import save_object
 
 
+=======
+from src.utils import save_object
+
+>>>>>>> 36f7984 (Initial commit: Redesigned UI, fixed scikit-learn mismatch, added README)
 ## Data Transformation config
 
 @dataclass

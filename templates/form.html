@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <html>
 <body>
 <form action="{{url_for('predict_datapoint')}}" method="POST">
@@ -76,3 +77,208 @@
 {{final_result}}
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Enter diamond characteristics to get an accurate price prediction">
+  <title>Predict Diamond Price | DiamondValue</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <nav>
+    <div style="display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto;">
+      <span class="nav-brand">💎 DiamondValue</span>
+      <div>
+        <a href="/">Home</a>
+        <a href="/predict">Predict Price</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+      <div class="form-header">
+        <h2>Diamond Price Prediction</h2>
+        <p>Enter the diamond characteristics below to get an estimated price</p>
+      </div>
+
+      <form action="{{url_for('predict_datapoint')}}" method="POST">
+        <div class="form-grid">
+          <!-- Physical Dimensions -->
+          <div class="form-group">
+            <label for="carat">
+              Carat Weight
+              <span class="required">*</span>
+            </label>
+            <input 
+              type="text" 
+              id="carat" 
+              name="carat" 
+              placeholder="e.g., 0.50"
+              required
+              step="0.01"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="depth">
+              Depth %
+              <span class="required">*</span>
+            </label>
+            <input 
+              type="text" 
+              id="depth" 
+              name="depth" 
+              placeholder="e.g., 61.5"
+              required
+              step="0.1"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="table">
+              Table %
+              <span class="required">*</span>
+            </label>
+            <input 
+              type="text" 
+              id="table" 
+              name="table" 
+              placeholder="e.g., 57.0"
+              required
+              step="0.1"
+            >
+          </div>
+
+          <!-- X, Y, Z Dimensions -->
+          <div class="form-group">
+            <label for="x">
+              Length (mm)
+              <span class="required">*</span>
+            </label>
+            <input 
+              type="text" 
+              id="x" 
+              name="x" 
+              placeholder="e.g., 5.15"
+              required
+              step="0.01"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="y">
+              Width (mm)
+              <span class="required">*</span>
+            </label>
+            <input 
+              type="text" 
+              id="y" 
+              name="y" 
+              placeholder="e.g., 5.18"
+              required
+              step="0.01"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="z">
+              Depth (mm)
+              <span class="required">*</span>
+            </label>
+            <input 
+              type="text" 
+              id="z" 
+              name="z" 
+              placeholder="e.g., 3.17"
+              required
+              step="0.01"
+            >
+          </div>
+
+          <!-- Quality Characteristics -->
+          <div class="form-group">
+            <label for="cut">
+              Cut Quality
+              <span class="required">*</span>
+            </label>
+            <select id="cut" name="cut" required>
+              <option value="">Select cut quality</option>
+              <option value="Fair">Fair</option>
+              <option value="Good">Good</option>
+              <option value="Very Good">Very Good</option>
+              <option value="Premium">Premium</option>
+              <option value="Ideal">Ideal</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="color">
+              Color Grade
+              <span class="required">*</span>
+            </label>
+            <select id="color" name="color" required>
+              <option value="">Select color grade</option>
+              <option value="D">D (Colorless)</option>
+              <option value="E">E (Colorless)</option>
+              <option value="F">F (Colorless)</option>
+              <option value="G">G (Near Colorless)</option>
+              <option value="H">H (Near Colorless)</option>
+              <option value="I">I (Near Colorless)</option>
+              <option value="J">J (Near Colorless)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="clarity">
+              Clarity Grade
+              <span class="required">*</span>
+            </label>
+            <select id="clarity" name="clarity" required>
+              <option value="">Select clarity grade</option>
+              <option value="IF">IF (Internally Flawless)</option>
+              <option value="VVS1">VVS1 (Very Very Slightly Included)</option>
+              <option value="VVS2">VVS2 (Very Very Slightly Included)</option>
+              <option value="VS1">VS1 (Very Slightly Included)</option>
+              <option value="VS2">VS2 (Very Slightly Included)</option>
+              <option value="SI1">SI1 (Slightly Included)</option>
+              <option value="SI2">SI2 (Slightly Included)</option>
+              <option value="I1">I1 (Included)</option>
+            </select>
+          </div>
+        </div>
+
+        <input type="submit" value="Predict Diamond Price">
+      </form>
+
+      {% if final_result %}
+      <div class="result-container">
+        <h3>Estimated Diamond Price</h3>
+        <div class="result-price">${{ final_result }}</div>
+        <p style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.9rem;">
+          This is an ML-generated estimate based on the provided characteristics
+        </p>
+      </div>
+      {% endif %}
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Diamond Price Prediction. Powered by Machine Learning.</p>
+  </footer>
+
+  <script>
+    // Add smooth loading state
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function() {
+      const submitBtn = this.querySelector('input[type="submit"]');
+      submitBtn.value = 'Predicting...';
+      submitBtn.classList.add('loading');
+    });
+  </script>
+</body>
+</html>
+>>>>>>> 36f7984 (Initial commit: Redesigned UI, fixed scikit-learn mismatch, added README)

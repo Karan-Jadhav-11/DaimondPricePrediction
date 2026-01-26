@@ -52,8 +52,11 @@ class DataIngestion:
             logging.info('Error occured in Data Ingestion config')
 
 
+<<<<<<< HEAD
 
 
 
 
 
+=======
+>>>>>>> 36f7984 (Initial commit: Redesigned UI, fixed scikit-learn mismatch, added README)

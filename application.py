@@ -1,4 +1,4 @@
-from flask import Flask,request,render_template,jsonify
+from flask import Flask,request,render_template,jsonify  
 from src.pipelines.prediction_pipeline import CustomData,PredictPipeline
 
 
@@ -38,4 +38,8 @@ def predict_datapoint():
     
 
 if __name__=="__main__":
-    app.run(host='0.0.0.0',debug=True)
+    print("----------------------------------------------------------------")
+    print("Starting Diamond Price Prediction Application...")
+    print("Open your browser to: http://127.0.0.1:5000/")
+    print("----------------------------------------------------------------")
+    app.run(host='0.0.0.0', port=5000, use_reloader=False)
