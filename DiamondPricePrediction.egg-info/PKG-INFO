@@ -1,9 +1,20 @@
-Metadata-Version: 2.1
+Metadata-Version: 2.4
 Name: DiamondPricePrediction
 Version: 0.0.1
-Author: Karan
+Author: Karan Jadhav
 Author-email: karanjadhav1771@gmail.com
 Requires-Dist: pandas
 Requires-Dist: numpy
 Requires-Dist: flask
 Requires-Dist: seaborn
+Requires-Dist: scikit-learn
+Requires-Dist: gunicorn
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: flask
+Requires-Dist: seaborn
+Requires-Dist: matplotlib
+Requires-Dist: scikit-learn
+Dynamic: author
+Dynamic: author-email
+Dynamic: requires-dist

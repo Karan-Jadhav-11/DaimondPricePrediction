@@ -1,85 +1,6 @@
-<<<<<<< HEAD
-<html>
-<body>
-<form action="{{url_for('predict_datapoint')}}" method="POST">
-    <div class="form-group">
-        <label for="carat">Carat:</label>
-        <input type="text" id="carat" name="carat" placeholder="Enter carat value (float)">
-    </div>
-
-    <div class="form-group">
-        <label for="depth">Depth:</label>
-        <input type="text" id="depth" name="depth" placeholder="Enter depth value (float)">
-    </div>
-
-    <div class="form-group">  
-        <label for="table">Table:</label>
-        <input type="text" id="table" name="table" placeholder="Enter table value (float)">
-    </div>
-    
-    <div class="form-group">
-        <label for="x">x:</label>
-        <input type="text" id="x" name="x" placeholder="Enter x value (float)">
-    </div>
-  
-    <div class="form-group">
-        <label for="y">y:</label>
-        <input type="text" id="y" name="y" placeholder="Enter y value (float)">
-    </div>
-  
-    <div class="form-group">
-        <label for="z">z:</label>
-        <input type="text" id="z" name="z" placeholder="Enter z value (float)">
-    </div>         
-  
-<div class="form-group">
-  <label for="cut">Cut:</label>
-  <select id="cut" name="cut">
-    <option value="Fair">Fair</option>
-    <option value="Good">Good</option>
-    <option value="Very Good">Very Good</option>
-    <option value="Premium">Premium</option>
-    <option value="Ideal">Ideal</option>
-  </select>
-</div>
-  
-<div class="form-group">
-  <label for="color">Color:</label>
-  <select id="color" name="color">
-    <option value="D">D</option>
-    <option value="E">E</option>
-    <option value="F">F</option>
-    <option value="G">G</option>
-    <option value="H">H</option>
-    <option value="I">I</option>
-    <option value="J">J</option>
-  </select>
-</div>
-
-<div class="form-group">
-  <label for="clarity">Clarity:</label>
-  <select id="clarity" name="clarity">
-    <option value="I1">I1</option>
-    <option value="SI2">SI2</option>
-    <option value="SI1">SI1</option>
-    <option value="VS2">VS2</option>
-    <option value="VS1">VS1</option>
-    <option value="VVS2">VVS2</option>
-    <option value="VVS1">VVS1</option>
-    <option value="IF">IF</option>
-  </select>
-</div>
-
-<div style="clear:both;"></div>
-  <input type="submit" value="Submit">
-</form>
-
-{{final_result}}
-</body>
-</html>
-=======
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -87,6 +8,7 @@
   <title>Predict Diamond Price | DiamondValue</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
+
 <body>
   <nav>
     <div style="display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto;">
@@ -107,99 +29,61 @@
 
       <form action="{{url_for('predict_datapoint')}}" method="POST">
         <div class="form-grid">
-          <!-- Physical Dimensions -->
+          <!-- Row 1 Left: Carat Weight -->
           <div class="form-group">
             <label for="carat">
               Carat Weight
               <span class="required">*</span>
             </label>
-            <input 
-              type="text" 
-              id="carat" 
-              name="carat" 
-              placeholder="e.g., 0.50"
-              required
-              step="0.01"
-            >
+            <input type="text" id="carat" name="carat" placeholder="e.g., 0.50" required step="0.01">
           </div>
 
+          <!-- Row 1 Right: Depth % -->
           <div class="form-group">
             <label for="depth">
               Depth %
               <span class="required">*</span>
             </label>
-            <input 
-              type="text" 
-              id="depth" 
-              name="depth" 
-              placeholder="e.g., 61.5"
-              required
-              step="0.1"
-            >
+            <input type="text" id="depth" name="depth" placeholder="e.g., 61.5" required step="0.1">
           </div>
 
+          <!-- Row 2 Left: Table % -->
           <div class="form-group">
             <label for="table">
               Table %
               <span class="required">*</span>
             </label>
-            <input 
-              type="text" 
-              id="table" 
-              name="table" 
-              placeholder="e.g., 57.0"
-              required
-              step="0.1"
-            >
+            <input type="text" id="table" name="table" placeholder="e.g., 57.0" required step="0.1">
           </div>
 
-          <!-- X, Y, Z Dimensions -->
+          <!-- Row 2 Right: Length (x) -->
           <div class="form-group">
             <label for="x">
               Length (mm)
               <span class="required">*</span>
             </label>
-            <input 
-              type="text" 
-              id="x" 
-              name="x" 
-              placeholder="e.g., 5.15"
-              required
-              step="0.01"
-            >
+            <input type="text" id="x" name="x" placeholder="e.g., 5.15" required step="0.01">
           </div>
 
+          <!-- Row 3 Left: Width (y) -->
           <div class="form-group">
             <label for="y">
               Width (mm)
               <span class="required">*</span>
             </label>
-            <input 
-              type="text" 
-              id="y" 
-              name="y" 
-              placeholder="e.g., 5.18"
-              required
-              step="0.01"
-            >
+            <input type="text" id="y" name="y" placeholder="e.g., 5.18" required step="0.01">
           </div>
 
+          <!-- Row 3 Right: Depth (z) -->
           <div class="form-group">
             <label for="z">
               Depth (mm)
               <span class="required">*</span>
             </label>
-            <input 
-              type="text" 
-              id="z" 
-              name="z" 
-              placeholder="e.g., 3.17"
-              required
-              step="0.01"
-            >
+            <input type="text" id="z" name="z" placeholder="e.g., 3.17" required step="0.01">
           </div>
 
-          <!-- Quality Characteristics -->
+          <!-- Row 4 Left: Cut Quality -->
           <div class="form-group">
             <label for="cut">
               Cut Quality
@@ -215,6 +99,7 @@
             </select>
           </div>
 
+          <!-- Row 4 Right: Color Grade -->
           <div class="form-group">
             <label for="color">
               Color Grade
@@ -232,6 +117,7 @@
             </select>
           </div>
 
+          <!-- Row 5 Left: Clarity Grade -->
           <div class="form-group">
             <label for="clarity">
               Clarity Grade
@@ -273,12 +159,12 @@
   <script>
     // Add smooth loading state
     const form = document.querySelector('form');
-    form.addEventListener('submit', function() {
+    form.addEventListener('submit', function () {
       const submitBtn = this.querySelector('input[type="submit"]');
       submitBtn.value = 'Predicting...';
       submitBtn.classList.add('loading');
     });
   </script>
 </body>
+
 </html>
->>>>>>> 36f7984 (Initial commit: Redesigned UI, fixed scikit-learn mismatch, added README)
