@@ -2,7 +2,7 @@
 
 A machine learning-powered web application that predicts diamond prices based on physical characteristics. Built with Flask and Scikit-learn.
 
-[![Live Demo](https://img.shields.io/badge/demo-online-green)](https://daimond-price-prediction-u9q3.onrender.com)
+[![Live Demo](https://img.shields.io/badge/demo-online-green)](https://daimondpriceprediction.onrender.com)
 ![Diamond Price Prediction](https://img.shields.io/badge/Status-Active-success)
 
 ## 🌟 Features
