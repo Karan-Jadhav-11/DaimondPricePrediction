@@ -2,13 +2,7 @@ pandas
 numpy
 flask
 seaborn
-scikit-learn
-gunicorn
-numpy
-pandas
-flask
-seaborn
 matplotlib
-scikit-learn
-
+scikit-learn==1.6.1
+gunicorn
 -e .
