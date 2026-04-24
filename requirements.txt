@@ -1,8 +1,6 @@
 pandas
 numpy
 flask
-seaborn
-matplotlib
 scikit-learn==1.6.1
 gunicorn
 -e .
